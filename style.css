@@ -1,0 +1,190 @@
+/* Root serve para criarmos as var para conseguirmos fazer as mudanças para varias partes com apenas uma mudança */
+:root {
+    --branco-principal: #ffffff;  /* Cor branca principal */
+    --cinza-secundario: #c0c0c0;  /* Cor cinza secundária */
+    --botao-azul: #167bf7;  /* Cor azul para botões */
+    --cor-de-fundo: #00030C;  /* Cor de fundo geral */
+    --cor-de-fundo-ao-tocar:#64a5f4;
+}
+
+/* Estamos passando que queremos o fundo da cor preta e as cores das letras branca */
+body {
+    background-color: var(--cor-de-fundo);  /* Cor de fundo definida no root */
+    color: var(--branco-principal);  /* Cor do texto definida no root */
+    font-size: 16px;/*Determinar o tamanho das fonts*/
+}
+
+/* O "*" serve para selecionarmos tudo do site */
+* {
+    margin: 0; /*Estamos determinando o site não conter nenhuma margin ou no caso, espaço entre as pontas do site e o conteúdo*/
+    padding: 0;/*Nesse caso, estamos tirando o espaçamento entre os conteúdos*/
+    font-family:Verdana, Geneva, Tahoma, sans-serif;/*Mudando a fonte para outra em especifico*/
+    font-weight: 400;/*Determinando a força da font ou se é mais grosso ou mais fino*/
+}
+
+/* Nessa parte, estamos colocando o seguinte: url no fundo, depois a função de não repetir a imagem e, por fim, a função de determinar o tamanho da foto com o contain, deixando no tamanho certinho */
+.principal {
+    background-image: url("/img/Background.png");  /* Imagem de fundo para a seção principal */
+    background-repeat: no-repeat;  /* Evitar repetição da imagem de fundo */
+    background-size: contain;  /* Ajusta o tamanho da imagem para caber na área */
+    align-items: center; /* Centralizando os conteúdos */
+    text-align: center;/* Centralizando o texto, mas não funciona apenas o texto, e sim com todo o conteúdo */
+}
+
+/* Colocamos a imagem no tamanho total da imagem */
+.container {
+    height: 100vh;  /* Altura da seção para ocupar 100% da altura da viewport */
+    display: grid;/*Estamos determinando o display grid, para determinarmos se será linha ou coluna*/
+    grid-template-columns: 50% 50%;/*Estou determinando o valor da coluna separada em 50% para cada parte*/
+}
+
+/* Nesse ponto, estamos mudando a cor do botão, a borda, padding que seria o espaçamento, cor, display, a decoração do texto  e a margin na parte de baixo. */
+.container_botao {
+    background-color: var(--botao-azul); /*Cor do fundo do botão*/
+    border-radius: 5px; /*Raio da borda*/
+    padding: 1em; /*Espaçamento entre as letras com o fundo*/
+    color: var(--branco-principal); /*Cor da letra*/
+    display: block;/*Determinando se terá um display ou não, e no caso estamos bloqueando qualquer tipo de display, para o botão não ocupar o site todo*/
+    text-decoration: none;/*Decoração para o texto*/
+    margin-bottom: 1em;/*Determinando a margin para a parte de baixo do site*/
+}
+
+.container_botao:hover{
+    background-color: var(--cor-de-fundo-ao-tocar);
+    color: black;
+}
+
+.botao_secundario {
+    background-color: transparent;  /* Usamos essa propriedade para colocar o fundo do botão secundário como transparente */
+    border: 2px solid var(--branco-principal);/* Determinando o tamanho da borda, se ela é sólida e a cor */
+}
+
+.container_aviso {
+    font-size: 12px;/* Tamanho da font */
+    color: var(--cinza-secundario);/* Cor da font */
+}
+
+.container_titulo {
+    font-size: 28px;/* Tamanho da font */
+    font-weight: 700;/* Grossura da font */
+}
+
+.container_imagem {
+    margin: 1em 0 2em 0;/* Margin da imagem */
+}
+
+.container_caixa {
+    margin: 0 6em;/* Margin da div caixa */
+}
+
+.secundario_imagem{
+    width: 80%;/* O quanto a imagem vai ocupar */
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.secundario_imagem:hover {
+    transform: translateY(-5px); /* Ajuste este valor conforme necessário para a altura desejada */
+}
+
+.secundario{
+    align-items: center;/*Alinhando os conteúdos */
+    margin: 0 10em;/* Margin total */
+}
+
+.descricao_titulo{
+    font-weight: 700;/*Grossura da font*/
+    font-size: 48px;/*Tamanho da font*/
+    color:var(--branco-principal);/* Colocando cor */
+    margin-bottom: 0.1em; /* Colocando margin na parte de baixo */
+}
+
+.descricao_texto{
+    color: var(--cinza-secundario);/* Colocando a cor */
+}
+
+.secundario_botao{
+    display:inline-block; /*Determinar o tamanho do botão*/
+    margin-top: 1em; /*Margin do topo*/
+}
+
+.container_descricao{
+    padding:2em;/* Espaçamento entre a descrição do botão*/
+}
+
+.dispositivos_lista{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 5em 0;
+}
+
+.dispositivos{
+    text-align: center;
+    
+}
+
+.dispositivos_titulo{
+    font-size: 48px;
+    color: var(--branco-principal);
+}
+
+.lista_item{
+    font-size: 32px;
+    color: var(--branco-principal);
+}
+
+.rodape{
+    text-align: center;
+}
+
+.rodape_lista{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-top: 1em;
+}
+
+.lista_link{
+    margin-left: 2em;
+    color: var(--branco-principal);
+    text-decoration: none;
+}
+
+.lista_link a{
+    text-decoration: none;
+    color: var(--branco-principal);
+    margin-left: 1em;
+}
+
+.lista_link a:hover{
+    color: var(--cinza-secundario);
+    border-top: 2px double var(--branco-principal);
+    padding: 0.1em;
+}
+
+
+.rodape_texto{
+    font-size: 14px;
+    margin: 1em 0;
+    color: var(--cinza-secundario);
+}
+
+.rodape{
+    text-align: center;
+    margin: 5em 3em;
+}
+
+.container_imagem {
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container_imagem:hover {
+    transform: translateY(-5px) ;/* Ajuste este valor conforme necessário para a altura desejada */
+    
+}
+
+.foto_dos_dispositivos:hover{
+    border-bottom: 2px solid var(--branco-principal);
+}
